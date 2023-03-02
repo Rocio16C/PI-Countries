@@ -1,0 +1,59 @@
+.numberPages {
+    list-style: none;
+    display: flex;
+}
+
+.numberPages li{
+    padding: 10px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: 20px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.numberPages li.active {
+    background-color:midnightblue;
+    color: white;
+    border-radius: 20px;
+}
+  
+.numberPages li.active ~ li {
+    transform: translateX(20px);
+}
+  
+.buttons{
+    background: #172348;
+    border-radius: 6px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    margin-top: 4px;
+}
+.font{
+    display: block;
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    background: #9499b1;
+    color: white;
+    font-weight: bold;
+    transform: translateY(-6px);
+}
+
+.font2{
+    display: block;
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    background: #3a52d8;
+    color: white;
+    font-weight: bold;
+    transform: translateY(-6px);
+}
+
+.buttons:active .font{
+    transform: translateY(-2px);
+}

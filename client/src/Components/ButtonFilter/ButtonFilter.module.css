@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.selectbox{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 150px;
+    height: 40px;
+    top: 30px;
+}
+
+.select{
+    border: none;
+    appearance: none;
+    padding: 0px 40px 0px 20px;
+    color: white;
+    background-color: #2873ff;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: monospace;
+    flex: 1;
+    margin: 6px;
+}
+
+.iconcontainer{
+    width: 30px;
+    height: 28px;
+    position: absolute;
+    margin-left: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    left: 59.3%;
+    top: 6px;
+}
+
+.icon-container img{
+    width: 5px;
+}
+
+.tittles{
+    position: relative;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: serif;
+    width: 200px;
+    bottom: 100%;
+    left: 50%;
+}
