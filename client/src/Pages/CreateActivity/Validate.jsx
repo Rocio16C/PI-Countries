@@ -1,9 +1,11 @@
-export function validate(state, touch){
+export function validate(state){
     const error = {}
 
     if(!state.name){
         error.name = 'Activity name is required'
-    } else if(!/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s()-]+$/.test(state.name)){
+    } else if(!/^\S(.*\S)?$/g.test(state.name)){
+        error.name = 'Do not leave blank spaces'
+    }else if(!/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s()-]+$/.test(state.name)){
         error.name = 'The name cannot contain symbols, only - and ()'
     } else if(!/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s()-]{1,60}$/.test(state.name)){
         error.name = 'The name is too long'

@@ -1,7 +1,6 @@
 import React from "react";
 import CountriesCards from '../../Components/CountriesCards/CountriesCards.jsx';
 import Pagination from "../../Components/Pagination/Pagination.jsx";
-import ButtonFilter from "../../Components/ButtonFilter/ButtonFilter.jsx";
 import { connect } from "react-redux";
 import { isLoading } from "../../Redux/actions/index.js";
 import tierra from "./../../image.gif"
@@ -28,7 +27,6 @@ class Home extends React.Component{
                 <div>
                 <h3>Countries</h3>
                 <br/>
-                <ButtonFilter/>
                 <CountriesCards />
                 <Pagination />
                  </div>

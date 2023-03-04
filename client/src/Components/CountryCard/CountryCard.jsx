@@ -21,7 +21,7 @@ function CountryCard(){
 
     return (
         <div>
-            {country.ID && <h4>ID: {country.id}</h4>}
+            {country.id && <h4>ID: {country.id}</h4>}
             {country.name && <h4>Country Name: {country.name}</h4>}
             {country.flag_image && <img src={country.flag_image} alt={country.name}/>}
             {country.Continent && <h4>Continent: {country.continent}</h4>}

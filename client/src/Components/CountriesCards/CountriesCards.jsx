@@ -17,7 +17,7 @@ class CountriesCards extends React.Component{
             <div className={styles.cards}>
                 {countries && countries.map(country => {
                     return (
-                    <div className={styles.card}>
+                    <div className={styles.card} key={country.id}>
                         <Link to={`/country/${country.id}`} className={styles.link}>
                             {country.flag_image && <img className={styles.images} src={country.flag_image} alt={country.name}/>}
                         <div key={country.id} className={styles.text}>

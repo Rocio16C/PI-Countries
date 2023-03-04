@@ -4,7 +4,7 @@ import { getCountryName, clearNameError } from '../../Redux/actions/index.js';
 import styles from "./SearchBar.module.css";
 import lupa from "./../../lupa.png"
 
-function SearchBar(){
+function SearchBar({setCurrentPage, setMinPageNumberLimit, setMaxPageNumberLimit}){
 
     const [countrySearch, setCountrySearch] = useState({
         countryName:'',
@@ -18,8 +18,11 @@ function SearchBar(){
     };
 
     const handleInputSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         dispatch(getCountryName(countrySearch.countryName))
+        setCurrentPage(1)
+        setMinPageNumberLimit(0)
+        setMaxPageNumberLimit(5)
     };
    
     return (

@@ -4,7 +4,7 @@ import { continentFilter, getActivities, activitiesFilter, orderByName, orderByP
 import styles from "./ButtonFilter.module.css"
 import flecha from "./../../flecha.png"
 
-function ButtonFilter(){
+function ButtonFilter({setCurrentPage, setMinPageNumberLimit, setMaxPageNumberLimit}){
 
     const dispatch = useDispatch();
     const { activities } = useSelector(state => state)
@@ -22,18 +22,30 @@ function ButtonFilter(){
 
     const handleContinentFilter = (event) => {
         dispatch(continentFilter(event.target.value))
+        setCurrentPage(1)
+        setMinPageNumberLimit(0)
+        setMaxPageNumberLimit(5)
     };
 
     const handleActivitiesFilter = (event) => {
         dispatch(activitiesFilter(event.target.value))
+        setCurrentPage(1)
+        setMinPageNumberLimit(0)
+        setMaxPageNumberLimit(5)
     };
 
     const handleOrderByName = (event) => {
         dispatch(orderByName(event.target.value))
+        setCurrentPage(1)
+        setMinPageNumberLimit(0)
+        setMaxPageNumberLimit(5)
     };
 
     const handleOrderByPopulation = (event) => {
         dispatch(orderByPopulation(event.target.value))
+        setCurrentPage(1)
+        setMinPageNumberLimit(0)
+        setMaxPageNumberLimit(5)
     };
 
     return (

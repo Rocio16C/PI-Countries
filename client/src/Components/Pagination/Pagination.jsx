@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import CountriesCards from "../CountriesCards/CountriesCards";
 import styles from "./Pagination.module.css";
+import SearchBar from "../SearchBar/SearchBar";
+import ButtonFilter from "../ButtonFilter/ButtonFilter";
 
 function Pagination(){
 
@@ -21,11 +23,11 @@ function Pagination(){
         if (currentPage >= maxPageNumberLimit) {
             setMaxPageNumberLimit(maxPageNumberLimit + 1);
             setMinPageNumberLimit(minPageNumberLimit + 1);
-          }
-          if (currentPage <= minPageNumberLimit + 1) {
+        }
+        if (currentPage <= minPageNumberLimit + 1) {
             setMaxPageNumberLimit(maxPageNumberLimit - 1);
             setMinPageNumberLimit(minPageNumberLimit - 1);
-          }
+        }
     };
 
     const numberPages = [];
@@ -36,7 +38,7 @@ function Pagination(){
     const indexOfLastCountry = currentPage * countriesPerPage; //es el ultimo pais a mostrar en esa pagina
     const indexOfFirstCountry = indexOfLastCountry - countriesPerPage; //es el primer pais a mostrar en esa pagina
     const currentCountries = totalCountries.slice(indexOfFirstCountry, indexOfLastCountry)
-
+    
     const pages = numberPages.map(number => {
         if(number < maxPageNumberLimit + 1 && number > minPageNumberLimit){
             return (
@@ -92,6 +94,16 @@ function Pagination(){
 
     return (
         <div>
+            <SearchBar 
+            setCurrentPage={setCurrentPage} 
+            setMinPageNumberLimit={setMinPageNumberLimit} 
+            setMaxPageNumberLimit={setMaxPageNumberLimit}
+            />
+            <ButtonFilter
+            setCurrentPage={setCurrentPage} 
+            setMinPageNumberLimit={setMinPageNumberLimit}
+            setMaxPageNumberLimit={setMaxPageNumberLimit} 
+            />
             <CountriesCards countries={currentCountries}/>
             <ul className={styles.numberPages}>
                 <li>
